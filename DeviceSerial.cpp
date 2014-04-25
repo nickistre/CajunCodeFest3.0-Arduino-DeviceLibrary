@@ -35,7 +35,8 @@ int DeviceSerial::send(String data, String type)
   String messageString;
   
   this->buildMessage(data, type, deviceMessage);
-  return this->sendMessage(deviceMessage);
+  this->messageToString(deviceMessage, messageString);
+  return Serial.print(messageString);
 }
 
 
